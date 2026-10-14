@@ -1,0 +1,572 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pravallika A | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f8f8;
+            color: #263238;
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        header {
+            background-color: #123b40;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            color: #72e0c0;
+            font-size: 26px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #72e0c0;
+        }
+
+        /* Home */
+        .hero {
+            min-height: 440px;
+            padding: 90px 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            background: linear-gradient(120deg, #e2f5ef, #f5f8f8);
+        }
+
+        .welcome {
+            color: #167d70;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #123b40;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .hero h3 {
+            color: #167d70;
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 16px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background-color: #167d70;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #123b40;
+            transform: translateY(-2px);
+        }
+
+        /* Common Sections */
+        section {
+            padding: 65px 8%;
+        }
+
+        .section-title {
+            font-size: 30px;
+            color: #123b40;
+            margin-bottom: 10px;
+        }
+
+        .section-intro {
+            color: #637477;
+            margin-bottom: 30px;
+        }
+
+        .title-line {
+            width: 65px;
+            height: 4px;
+            background-color: #72cdb4;
+            margin-bottom: 22px;
+            border-radius: 5px;
+        }
+
+        /* About */
+        #about {
+            background-color: white;
+        }
+
+        .about-text {
+            max-width: 850px;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            background-color: white;
+            padding: 22px;
+            border-radius: 10px;
+            border: 1px solid #e1ece9;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: #72cdb4;
+        }
+
+        .skill-card h3 {
+            color: #167d70;
+            margin-bottom: 8px;
+        }
+
+        /* Projects */
+        #projects {
+            background-color: #edf5f3;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .project-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e0eae7;
+            box-shadow: 0 4px 14px rgba(18, 59, 64, 0.05);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(18, 59, 64, 0.10);
+        }
+
+        .project-number {
+            display: inline-block;
+            color: #167d70;
+            background-color: #e2f5ef;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            color: #123b40;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: #637477;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            margin: 3px 3px 0 0;
+            background-color: #edf5f3;
+            color: #167d70;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        /* Education */
+        #education {
+            background-color: white;
+        }
+
+        .education-item {
+            padding: 20px;
+            margin-bottom: 16px;
+            background-color: #f5f8f8;
+            border-left: 4px solid #167d70;
+            border-radius: 6px;
+        }
+
+        .education-item h3 {
+            color: #123b40;
+            margin-bottom: 4px;
+        }
+
+        .education-item p {
+            color: #637477;
+        }
+
+        /* Contact */
+        #contact {
+            text-align: center;
+            background-color: #e2f5ef;
+        }
+
+        #contact p {
+            margin: 10px auto;
+            max-width: 650px;
+        }
+
+        .contact-links {
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            color: #167d70;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #123b40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .projects-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 65px 7%;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero h3 {
+                font-size: 19px;
+            }
+
+            section {
+                padding: 45px 7%;
+            }
+
+            .projects-container,
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <h2>Pravallika.A</h2>
+
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+        <p class="welcome">HELLO, WELCOME TO MY PORTFOLIO</p>
+
+        <h1>Hi, I'm Pravallika Alvakonda</h1>
+
+        <h3>Aspiring Python Full Stack Developer</h3>
+
+        <p>
+            I am an M.Sc. Biotechnology graduate transitioning
+            into the IT field. I am learning Python, MySQL,
+            HTML and CSS at TAP Academy and continuously
+            improving my programming and problem-solving skills.
+        </p>
+
+        <a href="#projects" class="button">Explore My Work</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="title-line"></div>
+
+        <p class="about-text">
+            I am a Biotechnology graduate with an interest in
+            software development and technology. My academic
+            background has helped me develop analytical thinking,
+            attention to detail and problem-solving skills.
+
+            <br><br>
+
+            Currently, I am building my technical knowledge through
+            training at TAP Academy, where I am learning programming,
+            database management and web development. I am eager to
+            apply my skills, learn from experienced professionals
+            and begin my career in the IT industry.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="title-line"></div>
+
+        <p class="section-intro">
+            Technologies and skills I am currently learning.
+        </p>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Programming fundamentals, loops, arrays and functions.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>MySQL</h3>
+                <p>SQL queries, database operations and constraints.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>HTML</h3>
+                <p>Webpage structure, hyperlinks, lists, forms and multimedia.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>CSS</h3>
+                <p>Colors, layouts, styling and responsive web design.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Problem Solving</h3>
+                <p>Developing logical thinking through coding practice.</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Continuous Learning</h3>
+                <p>Improving technical knowledge through regular practice.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="title-line"></div>
+
+        <p class="section-intro">
+            A collection of projects I plan to develop while
+            learning HTML and CSS.
+        </p>
+
+        <div class="projects-container">
+
+            <div class="project-card">
+                <span class="project-number">PROJECT 01</span>
+                <h3>Personal Portfolio Website</h3>
+                <p>
+                    A personal website to present my introduction,
+                    skills, educational background and contact
+                    information using HTML and CSS.
+                </p>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+            </div>
+
+            <div class="project-card">
+                <span class="project-number">PROJECT 02</span>
+                <h3>Multimedia Webpage</h3>
+                <p>
+                    A webpage demonstrating how to add images,
+                    audio and video using HTML multimedia elements.
+                </p>
+                <span class="tag">HTML</span>
+                <span class="tag">Multimedia</span>
+            </div>
+
+            <div class="project-card">
+                <span class="project-number">PROJECT 03</span>
+                <h3>HTML Lists & Learning Roadmap</h3>
+                <p>
+                    A learning roadmap webpage demonstrating ordered
+                    lists, unordered lists and description lists.
+                </p>
+                <span class="tag">HTML</span>
+                <span class="tag">Lists</span>
+            </div>
+
+            <div class="project-card">
+                <span class="project-number">PROJECT 04</span>
+                <h3>Healthy Living Website</h3>
+                <p>
+                    A health awareness website sharing healthy
+                    habits, wellness tips and general health
+                    information.
+                </p>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+            </div>
+
+            <div class="project-card">
+                <span class="project-number">PROJECT 05</span>
+                <h3>Student Registration Form</h3>
+                <p>
+                    A student registration page demonstrating
+                    text fields, dropdowns, radio buttons,
+                    checkboxes and text areas.
+                </p>
+                <span class="tag">HTML Forms</span>
+                <span class="tag">Input Elements</span>
+            </div>
+
+            <div class="project-card">
+                <span class="project-number">PROJECT 06</span>
+                <h3>UI Components Demo</h3>
+                <p>
+                    A webpage demonstrating buttons, progress bars,
+                    expandable information and other basic
+                    HTML interface components.
+                </p>
+                <span class="tag">HTML</span>
+                <span class="tag">UI Components</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title">Education & Training</h2>
+        <div class="title-line"></div>
+
+        <div class="education-item">
+            <h3>M.Sc. Biotechnology</h3>
+            <p>GITAM University</p>
+        </div>
+
+        <div class="education-item">
+            <h3>B.Sc. Biotechnology</h3>
+            <p>S.V. University</p>
+        </div>
+
+        <div class="education-item">
+            <h3>Technical Training</h3>
+            <p>TAP Academy</p>
+            <p>Python, MySQL, HTML and CSS</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="title-line" style="margin: 0 auto 22px;"></div>
+
+        <p>
+            I am actively looking for entry-level opportunities
+            in Python development, software development and
+            related technology roles.
+        </p>
+
+        <p>
+            I look forward to learning, contributing and growing
+            as a software developer.
+        </p>
+
+        <div class="contact-links">
+            <!-- Replace with your actual email -->
+            <a href="mailto:alvakondapravallika@gmail.com">Email Me</a>
+
+            <!-- Replace with your actual LinkedIn profile URL -->
+            <a href="https://www.linkedin.com/in/pravallika-alvakonda/"
+               target="_blank"
+               rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Pravallika Alvakonda | Personal Portfolio</p>
+    </footer>
+
+</body>
+</html>
